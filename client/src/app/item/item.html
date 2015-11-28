@@ -1,0 +1,63 @@
+<div class="container">
+<a href="/#/boards" class="btn btn-primary" style="margin-top: 15px"> Boards </a>
+<a href="/#/lists" class="btn btn-primary" style="margin-top: 15px">Lists</a>
+  <h2>{{itemCtrl.list_name}}</h2>
+
+ <!-- :USER: NOTIFICATION IF ERROR OCCURS -->
+  <span id ="notification"> </span>
+  
+  <!-- ITEM INPUT ** CREATE ITEM-->
+   <form role="form" ng-submit="itemCtrl.createItem()">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" ng-model="itemCtrl.formData.item_name" placeholder="What needs to be done?" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+      </div>
+    </div>
+  </form>
+  
+  <!-- ITEM INPUT ** SHOW + DELETE + EDIT -->
+  <div ui-sortable ng-model="itemCtrl.todos">
+  <p class="form-group" ng-repeat="todo in itemCtrl.todos" style="padding:5px 10px; cursor: move;">
+    <input type="text" ng-model="todo.item_name" class="form-control" style="float:left">
+    
+    <!-- DELETE ITEM -->
+    <span class="input-group-btn">
+      <button class="btn btn-danger" ng-click="itemCtrl.removeItem(todo._id)" aria-label="Remove">X</button>
+    
+    <!-- EDIT ITEM --> 
+      <button class="btn btn-primary" ng-click="itemCtrl.editItem(todo._id, todo.item_name)" aria-label="Edit">Edit</button>
+    </span>
+  </p>
+  <a href="/#/lists?board_name={{itemCtrl.board_name}}&board_id={{itemCtrl.boardId}}" class="btn btn-info">Back</a>
+  </div> 
+</div>
+
+<!-- example reference -->
+<!-- <div class="container">
+  <h2>My todos</h2> -->
+
+  <!-- Todos input -->
+  <!-- <form role="form" ng-submit="todos.addTodo()">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" ng-model="todos.todo" placeholder="What needs to be done?" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+      </div> -->
+<!--     </div>
+  </form> -->
+
+  <!-- Todos list -->
+  <!-- <div ui-sortable ng-model="todos.todo_list">
+    <p class="input-group" ng-repeat="todo in todos.todo_list" style="padding:5px 10px; cursor: move;">
+      <input type="text" ng-model="todo.name" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="todos.removeTodo($index)" aria-label="Remove">X</button>
+      </span>
+    </p>
+  </div>
+</div> -->

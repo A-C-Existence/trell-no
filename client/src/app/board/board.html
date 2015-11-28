@@ -1,0 +1,35 @@
+<div class="container">
+<a href="/#/boards" class="btn btn-primary" style="margin-top: 10px"> Boards </a> 
+<a href="/#/login" class="btn btn-primary" style="margin-top: 10px"> Logout </a> 
+
+
+  <h2>Boards</h2>
+
+  <!-- INPUT ** CREATE LIST -->
+   <form role="form" ng-submit="createBoard()">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" ng-model="formData.name" placeholder="New Board" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+      </div>
+    </div>
+  </form>
+  
+  <!-- INPUT ** SHOW + DELETE + EDIT BOARD -->
+  <div ui-sortable ng-model="boards">
+  <p class="form-group" ng-repeat="board in boards" style="padding:5px 10px; cursor: move;">
+    <input type="text" ng-model="board.name" class="form-control" style="float left">
+    <!-- DELETE LIST -->
+    <span class="input-group-btn">
+      <button class="btn btn-danger" ng-click="removeBoard(board._id)" aria-label="Remove">X</button>
+    <!-- EDIT LIST --> 
+      <a class="btn btn-primary" ng-click="editBoard(board._id, board.name)" aria-label="Edit">Edit</a>
+    <!-- VIEW SINGLE LIST W/ITS RELATED ITEMS -->
+    <!-- {{splices variables into string}} -->
+         <a href="/#/lists?board_name={{board.name}}&board_id={{board._id}}" class="btn btn-info"aria-label="View">View Board</a>
+    </span>
+  </p>
+  </div> 
+</div>

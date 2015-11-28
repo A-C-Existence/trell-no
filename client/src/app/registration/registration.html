@@ -1,0 +1,38 @@
+<div class="container">
+<body>
+<div class="jumbotron">
+    <!-- 'Ng Notify' Upon Successful Regisration -->
+    <span id ="registrationSuccess"> </span>
+    <h2>Register</h2>
+
+  <!-- USER INPUT + USER REGISTRATION  -->
+   <form role="form" ng-submit="registerCtrl.register()">
+    <div class="row">
+      <div class="input-group" id="register">
+        <div>
+          <label for="text">Initials</label>
+          <input type="text"  ng-model="registerCtrl.formData.initials" placeholder="Your Name" class="form-control">
+        </div>
+        <div>
+          <label for="text">Username</label>
+          <input type="text"  ng-model="registerCtrl.formData.username" placeholder="username" class="form-control">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email"  ng-model="registerCtrl.formData.email" placeholder="youremail@email.com" class="form-control">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" ng-model="registerCtrl.formData.password" placeholder="password" class="form-control">
+        </div>
+        <div>
+          <label for="text">Bio</label>
+          <input type="text"  ng-model="registerCtrl.formData.bio" placeholder="I am a trelloh user" class="form-control">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Register">
+        <a href="/#/login" class="btn btn-primary"> Back </a>
+      </div>
+    </div>
+  </form>
+</body>
+</div>

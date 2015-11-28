@@ -1,0 +1,32 @@
+{
+  "name": "mytodo",
+  "version": "0.0.1",
+  "description": "todo app server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Melly Millions",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "install": "^0.2.5",
+    "jade": "^1.11.0",
+    "jasmine": "^2.3.2",
+    "local-storage": "^1.4.2",
+    "lodash": "^3.10.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.4",
+    "npm": "^3.3.10"
+  },
+  "devDependencies": {
+    "supertest": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "building-blocks"
+  }
+}
